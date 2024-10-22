@@ -234,6 +234,12 @@ OFFICIAL_MODEL_NAMES = [
     "google-t5/t5-base",
     "google-t5/t5-large",
     "ai-forever/mGPT",
+    "Vikhrmodels/Vikhr-Llama-3.2-1B-Instruct",
+    "Vikhrmodels/Vikhr-Llama-3.2-3B-Instruct",
+    "Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct",
+    "Vikhrmodels/Vikhr-Qwen-2.5-1.5b-Instruct",
+    "Vikhrmodels/Vikhr-Qwen-2.5-3b-Instruct",
+    "Vikhrmodels/Vikhr-Qwen-2.5-7b-Instruct",
 ]
 """Official model names for models on HuggingFace."""
 
@@ -930,6 +936,44 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "positional_embedding_type": "rotary",
             "rotary_adjacent_pairs": False,
             "rotary_dim": 128,
+            "final_rms": True,
+            "gated_mlp": True,
+        }
+    elif "Vikhrmodels/Vikhr-Llama-3.2-3B-Instruct" in official_model_name:
+        cfg_dict = {
+            "d_model": 3072,
+            "d_head": 128,
+            "n_heads": 24,
+            "d_mlp": 8192,
+            "n_layers": 28,
+            "n_ctx": 2048,  # capped due to memory issues
+            "eps": 1e-5,
+            "d_vocab": 128256,
+            "act_fn": "silu",
+            "n_key_value_heads": 8,
+            "normalization_type": "RMS",
+            "positional_embedding_type": "rotary",
+            "rotary_adjacent_pairs": False,
+            "rotary_dim": 128,
+            "final_rms": True,
+            "gated_mlp": True,
+        }
+    elif "Vikhrmodels/Vikhr-Llama-3.2-1B-Instruct" in official_model_name:
+        cfg_dict = {
+            "d_model": 2048,
+            "d_head": 64,
+            "n_heads": 32,
+            "d_mlp": 8192,
+            "n_layers": 16,
+            "n_ctx": 2048,  # capped due to memory issues
+            "eps": 1e-5,
+            "d_vocab": 128256,
+            "act_fn": "silu",
+            "n_key_value_heads": 8,
+            "normalization_type": "RMS",
+            "positional_embedding_type": "rotary",
+            "rotary_adjacent_pairs": False,
+            "rotary_dim": 64,
             "final_rms": True,
             "gated_mlp": True,
         }
