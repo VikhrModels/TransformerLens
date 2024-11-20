@@ -240,6 +240,7 @@ OFFICIAL_MODEL_NAMES = [
     "Vikhrmodels/Vikhr-Qwen-2.5-1.5b-Instruct",
     "Vikhrmodels/Vikhr-Qwen-2.5-3b-Instruct",
     "Vikhrmodels/Vikhr-Qwen-2.5-7b-Instruct",
+    "Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24",
 ]
 """Official model names for models on HuggingFace."""
 
@@ -616,6 +617,7 @@ MODEL_ALIASES = {
     "mistralai/Mistral-7B-v0.1": ["mistral-7b"],
     "mistralai/Mistral-7B-Instruct-v0.1": ["mistral-7b-instruct"],
     "mistralai/Mistral-Nemo-Base-2407": ["mistral-nemo-base-2407"],
+    "Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24": ["mistral-nemo-base-2407"],
     "mistralai/Mixtral-8x7B-v0.1": ["mixtral", "mixtral-8x7b"],
     "mistralai/Mixtral-8x7B-Instruct-v0.1": [
         "mixtral-instruct",
